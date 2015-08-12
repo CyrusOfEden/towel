@@ -12,4 +12,15 @@ defmodule Maybe do
 
   def error, do: {:error, nil}
   def error(r), do: {:error, r}
+
+  def combine(ms) when is_list(ms) do
+    try do
+      List.foldr ms, {:ok, []}, fn
+        {:ok, v}, {:ok, vs} -> {:ok, [v|vs]}
+        {:error, reason}, _ -> throw reason
+      end
+    catch
+      reason -> {:error, reason}
+    end
+  end
 end
