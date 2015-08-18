@@ -3,29 +3,25 @@ defmodule Towel.Mixfile do
 
   def project do
     [app: :towel,
+     description: "Simple monads for Elixir, in Elixir-style (not Haskell!)",
      version: "0.0.1",
      elixir: "~> 1.0",
+     package: package,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type `mix help compile.app` for more information
-  def application do
-    [applications: [:logger]]
+  def package do
+    [licenses: ["MIT"],
+     contributors: ["Kash Nouroozi"],
+     links: %{ "Github" => "https://github.com/knrz/towel" }]
   end
 
-  # Dependencies can be Hex packages:
-  #
-  #   {:mydep, "~> 0.3.0"}
-  #
-  # Or git/path repositories:
-  #
-  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
-  #
-  # Type `mix help deps` for more examples and options
+  def application do
+    []
+  end
+
   defp deps do
     []
   end

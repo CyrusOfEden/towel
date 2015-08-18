@@ -1,6 +1,6 @@
 # Towel [![Build Status](https://travis-ci.org/knrz/towel.svg)](https://travis-ci.org/knrz/towel)
 
-Simple, unobtrusive Monads that anyone can use in Elixir.
+Simple, unobtrusive monads that anyone can use in Elixir.
 
 ## Installation
 
