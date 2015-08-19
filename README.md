@@ -1,5 +1,7 @@
 # Towel [![Build Status](https://travis-ci.org/knrz/towel.svg)](https://travis-ci.org/knrz/towel)
 
+**HERE BE DRAGONS. You should figure out how this lib works on your own for the time being—I look to have complete docs by September (2015), but until then, you're on your own.**
+
 Simple, unobtrusive monads that anyone can use in Elixir.
 
 ## Installation
