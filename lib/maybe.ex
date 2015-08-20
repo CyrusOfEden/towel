@@ -9,10 +9,10 @@ defmodule Maybe do
   def unwrap({t, v}) when t in [:ok, :error], do: unwrap(v)
   def unwrap(x), do: x
 
-  def ok(v), do: {:ok, v}
+  def ok(v), do: {:ok, unwrap(v)}
 
   def error, do: {:error, nil}
-  def error(r), do: {:error, r}
+  def error(r), do: {:error, unwrap(r)}
 
   def combine(ms) when is_list(ms) do
     case List.keyfind(ms, :error, 0) do
