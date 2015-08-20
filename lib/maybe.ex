@@ -14,13 +14,11 @@ defmodule Maybe do
   def error(r), do: {:error, r}
 
   def combine(ms) when is_list(ms) do
-    try do
-      List.foldr ms, {:ok, []}, fn
-        {:ok, v}, {:ok, vs} -> {:ok, [v|vs]}
-        {:error, reason}, _ -> throw reason
-      end
-    catch
-      reason -> {:error, reason}
+    case List.keyfind(ms, :error, 0) do
+      {:error, reason} ->
+        error(reason)
+      nil ->
+        ok(Enum.map(ms, &elem(&1, 1)))
     end
   end
 end
