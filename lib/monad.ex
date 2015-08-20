@@ -10,9 +10,19 @@ defimpl Monad, for: List do
 end
 
 defimpl Monad, for: Tuple do
-  # Maybe
+  # Result
   def bind(m = {:error, _}, _), do: m
   def bind({:ok, v}, f) when is_function(f) do
     f.(v)
   end
+
+  # Maybe
+  def bind({:just, v}, f) when is_function(f) do
+    f.(v)
+  end
+end
+
+defimpl Monad, for: Atom do
+  # Maybe
+  def bind(:nothing, _), do: :nothing
 end
