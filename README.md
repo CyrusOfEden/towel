@@ -8,7 +8,7 @@ Keep calm and add Towel to your `mix.exs` dependencies:
 
 ```elixir
 def deps do
-  [{:towel, "~> 0.0.1"}]
+  [{:towel, "~> 0.1.0"}]
 end
 ```
 
