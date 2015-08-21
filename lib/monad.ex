@@ -23,17 +23,17 @@ defimpl Monad, for: Tuple do
   def bind({:ok, v}, f) when is_function(f) do
     f.(v)
   end
-
-  def tap({:ok, v}, f) when is_function(f) do
-    f.(v)
-    {:ok, v}
-  end
-
   # Maybe
   def bind({:just, v}, f) when is_function(f) do
     f.(v)
   end
 
+  # Result
+  def tap({:ok, v}, f) when is_function(f) do
+    f.(v)
+    {:ok, v}
+  end
+  # Maybe
   def tap({:just, v}, f) when is_function(f) do
     f.(v)
     {:just, v}
