@@ -38,11 +38,11 @@ defimpl Functor, for: Tuple do
   def combine({:error, r}, _), do: {:error, r}
   def combine(_, {:error, r}), do: {:error, r}
   def combine({:ok, va}, {:ok, vb}) do
-    {:ok, [va,vb]}
+    {:ok, {va,vb}}
   end
   # Maybe
   def combine({:just, va}, {:just, vb}) do
-    {:just, [va,vb]}
+    {:just, {va,vb}}
   end
 end
 
