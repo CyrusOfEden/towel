@@ -109,12 +109,19 @@ File.read("inspirational_quotes.txt")
 end)
 ```
 
+**tap/2** takes a monad and a function, applies the function to the value, and returns the monad. This is useful for adding side-effects (_gasp_ impurity!).
+
+```elixir
+File.read("inspirational_quotes.txt")
+|> tap(&IO.puts/1)
+```
+
 ### Functor
 
 **fmap/2** takes a monad and a function, and applies the function with the wrapped value of the monad if the monad is `ok`. Silently passes if the monad is an `error`. Will automatically wrap the return value by passing it to the appropriate `Monad.wrap` function.
 
 ```elixir
-File.read("inspiration_quotes.txt")
+File.read("inspirational_quotes.txt")
 |> fmap(fn quotes ->
   if length(quotes) > 0, do: quotes, else: nil
 end)
