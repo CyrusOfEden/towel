@@ -29,6 +29,7 @@ defimpl Monad, for: Tuple do
   end
 
   # Result
+  def tap(m = {:error, _}, _), do: m
   def tap({:ok, v}, f) when is_function(f) do
     f.(v)
     {:ok, v}

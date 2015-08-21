@@ -4,7 +4,7 @@ defmodule Towel.Mixfile do
   def project do
     [app: :towel,
      description: "A delightfully simple monad library that's written for Elixir.",
-     version: "0.2.0",
+     version: "0.2.1",
      elixir: "~> 1.0",
      package: package,
      build_embedded: Mix.env == :prod,
