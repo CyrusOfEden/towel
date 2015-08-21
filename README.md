@@ -14,7 +14,7 @@ end
 
 and run `$ mix deps.get`.
 
-You're ready to start righting more expressive code!
+You're ready to start ~~righting~~ writing code!
 
 ## Philosophy
 
