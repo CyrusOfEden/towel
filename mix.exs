@@ -6,10 +6,10 @@ defmodule Towel.Mixfile do
      description: "A delightfully simple monad library that's written for Elixir.",
      version: "0.2.1",
      elixir: "~> 1.0",
-     package: package,
+     package: package(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps()]
   end
 
   def package do
