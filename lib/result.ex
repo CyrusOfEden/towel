@@ -13,4 +13,11 @@ defmodule Result do
 
   def error, do: {:error, nil}
   def error(r), do: {:error, unwrap(r)}
+
+  def is_ok({:ok, _}), do: true
+  def is_ok(_), do: false
+
+  def is_error({:error, _}), do: true
+  def is_error(_), do: false
 end
+
