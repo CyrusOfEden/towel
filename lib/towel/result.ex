@@ -1,4 +1,4 @@
-defmodule Result do
+defmodule Towel.Result do
   def wrap(m = {:ok, _}), do: m
   def wrap(m = {:error, _}), do: m
 

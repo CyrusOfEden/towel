@@ -1,4 +1,4 @@
-defmodule Maybe do
+defmodule Towel.Maybe do
   def wrap(m = {:just, _}), do: m
   def wrap(m = :nothing), do: m
 
