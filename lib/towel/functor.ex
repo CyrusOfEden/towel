@@ -1,9 +1,9 @@
-defprotocol Functor do
+defprotocol Towel.Functor do
   def fmap(m, f)
   def combine(ms, acc)
 end
 
-defimpl Functor, for: List do
+defimpl Towel.Functor, for: List do
   # List
   def fmap(m, f) when is_function(f) do
     Enum.map m, f
@@ -12,7 +12,7 @@ defimpl Functor, for: List do
   def combine(m, m), do: m ++ m
 end
 
-defimpl Functor, for: Function do
+defimpl Towel.Functor, for: Function do
   # Function
   def fmap(lhs, rhs) do
     fn x ->
@@ -23,15 +23,15 @@ defimpl Functor, for: Function do
   def combine(lhs, rhs), do: fmap(lhs, rhs)
 end
 
-defimpl Functor, for: Tuple do
+defimpl Towel.Functor, for: Tuple do
   # Result
   def fmap(m = {:error, _}, _), do: m
   def fmap({:ok, v}, f) when is_function(f) do
-    Result.wrap f.(v)
+    Towel.Result.wrap f.(v)
   end
   # Maybe
   def fmap({:just, v}, f) when is_function(f) do
-    Maybe.wrap f.(v)
+    Towel.Maybe.wrap f.(v)
   end
 
   # Result
@@ -46,7 +46,7 @@ defimpl Functor, for: Tuple do
   end
 end
 
-defimpl Functor, for: Atom do
+defimpl Towel.Functor, for: Atom do
   # Maybe
   def fmap(:nothing, _), do: :nothing
   # Maybe
