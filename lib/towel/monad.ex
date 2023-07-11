@@ -10,10 +10,7 @@ defimpl Towel.Monad, for: List do
   end
 
   def tap(m, f) when is_function(f) do
-    Enum.map m, fn i ->
-      f.(i)
-      i
-    end
+    m |> Enum.map(fn x -> f.(x); x end)
   end
 end
 

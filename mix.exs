@@ -9,20 +9,16 @@ defmodule Towel.Mixfile do
      package: package(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     deps: []]
   end
 
   def package do
     [licenses: ["MIT"],
-     contributors: ["Kash Nouroozi"],
-     links: %{"Github" => "https://github.com/knrz/towel"}]
+     contributors: ["Cyrus Nouroozi"],
+     links: %{"Github" => "https://github.com/CyrusOfEden/towel"}]
   end
 
   def application do
-    []
-  end
-
-  defp deps do
     []
   end
 end
