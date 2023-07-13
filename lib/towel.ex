@@ -1,5 +1,7 @@
 defmodule Towel do
-  defmacro __using__(_opts \\ []) do
+  @doc "Carry your towel with you."
+
+  defmacro __using__(_opts) do
     quote do
       alias Towel.{Monad, Functor, Result, Maybe}
       import Monad

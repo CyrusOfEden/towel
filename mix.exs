@@ -1,4 +1,4 @@
-defmodule Towel.Mixfile do
+defmodule Towel.MixProject do
   use Mix.Project
 
   def project do
