@@ -9,7 +9,7 @@ defmodule Towel.MixProject do
      package: package(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: []]
+     deps: [{:ex_doc, ">= 0.0.0", only: :dev, runtime: false}]]
   end
 
   def package do
